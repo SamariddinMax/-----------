@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071126">
+  <title>✨ Конвертер — быстро и удобно</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="bear-cursor" aria-hidden="true">☝️</div>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="particles" aria-hidden="true">
+    <span>✦</span><span>✧</span><span>✦</span><span>·</span><span>✧</span>
+  </div>
+
+  <main class="container">
+    <div class="logo" aria-hidden="true">🔄</div>
+    <p class="eyebrow">БЫСТРО • УДОБНО • ПРОСТО</p>
+    <h1>Умный <span>конвертер</span></h1>
+    <p class="subtitle">Переводи единицы измерения за секунду ⚡</p>
+
+    <section class="converter-card" aria-label="Конвертер единиц измерения">
+      <label for="category">Что будем конвертировать?</label>
+      <div class="select-wrap">
+        <span aria-hidden="true">🧩</span>
+        <select id="category">
+          <option value="length">📏 Длина</option>
+          <option value="weight">⚖️ Вес</option>
+          <option value="temperature">🌡️ Температура</option>
+        </select>
+      </div>
+
+      <div class="field-grid">
+        <div class="field">
+          <label for="amount">Значение</label>
+          <input id="amount" type="number" inputmode="decimal" placeholder="Например, 100" value="100" step="any">
+        </div>
+        <button class="swap-button" id="swap" type="button" aria-label="Поменять единицы местами" title="Поменять единицы местами">⇄</button>
+        <div class="field">
+          <label for="fromUnit">Из единицы</label>
+          <select id="fromUnit"></select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="toUnit">В единицу</label>
+        <select id="toUnit"></select>
+      </div>
+
+      <button class="convert-button" id="convert" type="button">
+        <span>✨</span> Конвертировать <span class="button-arrow">→</span>
+      </button>
+
+      <section class="result" id="result" aria-live="polite">
+        <div class="result-top">
+          <span>🎉 Результат</span>
+          <button id="copy" class="copy-button" type="button" title="Скопировать результат" aria-label="Скопировать результат">📋</button>
+        </div>
+        <output id="output">1 м = 100 см</output>
+        <p id="resultHint">Готово к новым открытиям 🚀</p>
+      </section>
+      <p class="error" id="error" role="alert"></p>
+    </section>
+
+    <footer>
+      <span>💙 Создано для удобства</span>
+      <span class="footer-dot">•</span>
+      <span>Работает прямо в браузере</span>
+    </footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
